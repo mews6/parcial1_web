@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Col, Container, Row, Table } from 'react-bootstrap';
-import {FormattedMessage} from 'react-intl';
+import {FormattedMessage,IntlProvider} from 'react-intl';
 import { BrowserRouter, Router, Route } from 'react-router-dom';
 import Robot from './robot';
 import Card from 'react-bootstrap/Card';
@@ -51,9 +51,9 @@ function Robots(){
             <Table>
                 <thead>
                     <th>id</th>
-                    <th>Nombre</th>
-                    <th>modelo</th>
-                    <th>Empresa Fabricante</th>
+                    <th><FormattedMessage id="Name"/></th>
+                    <th><FormattedMessage id="Model"/></th>
+                    <th><FormattedMessage id="Fabricator"/></th>
                 </thead>
                 <tbody>
                     
