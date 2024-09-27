@@ -23,13 +23,13 @@ function Robot(props){
            <Card.Body>
                <Card.Title>{robot.nombre}</Card.Title>
                <Card.Text>
-                   <b>-> Año de Fabricacion:</b> {robot.añoFabricacion}
+                   <b>→ Año de Fabricacion:</b> {robot.añoFabricacion}
                </Card.Text>
                <Card.Text>
-                   <b>-> Capacidad de Procesamiento:</b> {robot.capacidadProcesamiento}
+                   <b>→ Capacidad de Procesamiento:</b> {robot.capacidadProcesamiento}
                </Card.Text>
                <Card.Text>
-                    <b>-> Humor:</b> {robot.humor}
+                    <b>→ Humor:</b> {robot.humor}
                </Card.Text>
            </Card.Body>
        </Card>
