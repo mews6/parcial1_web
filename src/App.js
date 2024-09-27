@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Login from './components/login';
 import Robots from './components/robots';
+import Robot from './components/robot';
 
 const { useEffect, useState } = require("react");
 
@@ -15,6 +16,7 @@ function App() {
          <Route path="/login" element ={<Login />} /> 
          <Route path="/" element = {<Login />} />
          <Route path="/robots" element={<Robots />} />
+         <Route path="/robots/:robotId" element={<Robot />} />
        </Routes>
      </BrowserRouter>
     </div>
