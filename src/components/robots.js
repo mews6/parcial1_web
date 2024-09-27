@@ -12,30 +12,8 @@ function Robots(){
         })
     }, []);
     
-    console.log(robots);
-    const header = ["id", "Nombre", "Modelo", "Empresa Fabricante"];
-
-    return(
-        <div>
-            <table className="table">
-                <thead>
-                    <tr>{header.map((h, i) => <th key={i}>{h}</th>)}</tr>
-                </thead>
-                <tbody>
-                    {Object.keys(robots.available).map((k,i) =>{
-                        let data = robots.available[k];
-                        return (
-                          <tr key={i}>
-                            <td>{k}</td>
-                            <td>{data.nombre}</td>
-                            <td>{data.modelo}</td>
-                            <td>{data.empresaFabricante}</td>
-                            </tr> );
-                })}
-                </tbody>
-            </table>
-        </div>
-    )
+    const robotData = {...robots}
+    console.log(robotData);
 }
 
 export default Robots;
