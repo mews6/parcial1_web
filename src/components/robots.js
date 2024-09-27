@@ -22,12 +22,9 @@ function Robots(){
                 <th scope="row">{robots.id}</th>
                 <th>{robots.nombre}</th>
                 <th>{robots.modelo}</th>
-                <th>{robots.empresaFabricante}<th/>
+                <th>{robots.empresaFabricante}</th>
                 </thead>
                 <tbody>
-                <Row>
-                {mascotas.map(mascota => <Col><Mascota mascota={mascota} key={mascota.id}/></Col>)}               
-                </Row>
                 </tbody>
             </table>
         </div>
