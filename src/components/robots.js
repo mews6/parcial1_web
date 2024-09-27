@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import {FormattedMessage} from 'react-intl';
 
 function Robots(){
@@ -13,18 +11,27 @@ function Robots(){
             setRobots(data);
         })
     }, []);
-
+    
     console.log(robots);
+    const header = ["id", "Nombre", "Modelo", "Empresa Fabricante"];
+
     return(
         <div>
             <table className="table">
                 <thead>
-                <th scope="row">{robots.id}</th>
-                <th>{robots.nombre}</th>
-                <th>{robots.modelo}</th>
-                <th>{robots.empresaFabricante}</th>
+                    <tr>{header.map((h, i) => <th key={i}>{h}</th>)}</tr>
                 </thead>
                 <tbody>
+                    {Object.keys(robots.available).map((k,i) =>{
+                        let data = robots.available[k];
+                        return (
+                          <tr key={i}>
+                            <td>{k}</td>
+                            <td>{data.nombre}</td>
+                            <td>{data.modelo}</td>
+                            <td>{data.empresaFabricante}</td>
+                            </tr> );
+                })}
                 </tbody>
             </table>
         </div>
