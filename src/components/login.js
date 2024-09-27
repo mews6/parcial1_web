@@ -56,7 +56,7 @@ function Login() {
           { }
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" onClick={clickSubmit}>
           Submit
         </Button>
         
