@@ -16,7 +16,6 @@ function Robots(){
             setRobots(data);
         })
     }, []);
-    
 
     function fetchDetails(id) {
         setRobot(robots[id-1])

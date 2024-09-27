@@ -11,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <h1>Adopta un Robot con Robot Lovers!</h1>
+      <img src='./header/header-img.png'/>
       <BrowserRouter>
        <Routes> 
          <Route path="/login" element ={<Login />} /> 
@@ -19,7 +20,12 @@ function App() {
          <Route path="/robots/:robotId" element={<Robot />} />
        </Routes>
      </BrowserRouter>
-    </div>
+    <center>
+      <p>
+        Contact us: +57 3102105253 - info@robot-lovers.com - @robot-lovers
+      </p>  
+    </center>
+     </div>
   );
 }
 

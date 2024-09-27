@@ -4,28 +4,32 @@ import Form from 'react-bootstrap/Form';
 
 function Login() {
   const [formValues, setFormValues] = useState({ login: "", password: "", favClass: "1" });
-  const [userValid, setUserValid] = useState(true);
-  const [passwordValid, setPasswordValid] = useState(true); 
+  const [formValid, setFormValid] = useState(true);
   const [submitClicked, setSubmitClicked] = useState(false);
-  
-  const validatePassword = (password) => {
-    const passwordRegex = /^(?=.*[0-9])(?=.*[A-Za-z])[A-Za-z0-9]+$/;
-    return password.length >= 9 && passwordRegex.test(password);
-  };
 
   const clickSubmit = (e) => {
     e.preventDefault(); 
+    
+    const post = fetch('http://localhost:3001/login', {
+      method: 'POST',
+      body: ({ 
+        login: formValues.login, 
+        password: formValues.password 
+      })
+    });
+
+
+    console.log(post);
+
     setSubmitClicked(true); 
   };
 
   const handleUserChange = (e) => {
-    setFormValues({ ...formValues, email: e.target.value });
+    setFormValues({ ...formValues, login: e.target.value });
   };
 
   const handlePasswordChange = (e) => {
-    const newPassword = e.target.value;
-    setFormValues({ ...formValues, password: newPassword });
-    setPasswordValid(validatePassword(newPassword)); 
+    setFormValues({ ...formValues, password: e.target.value});
   };
 
   return (
@@ -33,11 +37,11 @@ function Login() {
       <h1>Inicio de Sesion</h1>
 
       <Form onSubmit={clickSubmit}>
-        <Form.Group className="mb-6" controlId="formBasicEmail">
+        <Form.Group className="mb-6" controlId="formBasicUsername">
           <Form.Label>Usuario</Form.Label>
           <Form.Control
-            type="login"
-            placeholder="Enter Username"
+            type="username"
+            placeholder="Username"
             onChange={handleUserChange}
             value={formValues.login}
           />
@@ -51,7 +55,6 @@ function Login() {
             placeholder="Password"
             onChange={handlePasswordChange}
             value={formValues.password}
-            isInvalid={!passwordValid} // Valida en tiempo real la contraseña
           />
           { }
         </Form.Group>
@@ -64,6 +67,11 @@ function Login() {
           Cancelar
         </Button>
 
+        { !formValid && (
+            <Form.Text className="text-danger">
+                  Error de autenticación, revise sus credenciales.
+            </Form.Text>
+        )}
       </Form>
     </div>
   );
