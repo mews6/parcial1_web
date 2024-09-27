@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Table } from 'react-bootstrap';
+import { Row, Table } from 'react-bootstrap';
 import {FormattedMessage} from 'react-intl';
 
 function Robots(){
@@ -16,7 +16,12 @@ function Robots(){
     const robotData = {...robots}
     console.log(robotData);
 
+    function fetchDetails(id) {
+        console.log(id);
+    }
+
     return(
+        <Row>
         <Table>
             <thead>
                 <th>id</th>
@@ -27,7 +32,7 @@ function Robots(){
             <tbody>
                 
                 {robots.map(robot => 
-                    <tr>
+                    <tr onClick={() => fetchDetails(robot.id)}>
                         <td>{robot.id}</td>
                         <td>{robot.nombre}</td>
                         <td>{robot.modelo}</td>
@@ -37,6 +42,8 @@ function Robots(){
                 
             </tbody>
         </Table>
+        
+        </Row>
     )
 
 }
