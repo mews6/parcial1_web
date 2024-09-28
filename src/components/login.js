@@ -40,13 +40,16 @@ function Login() {
   };
 
   return (
+    <center>
+    <Col style={{width: "21rem"}}>
     <div>
       <h1>Inicio de Sesion</h1>
       <Col>
       <Form onSubmit={clickSubmit}>
         <Form.Group className="mb-6" controlId="formBasicUsername">
-          <Form.Label>Usuario</Form.Label>
+          <Form.Label><b>Usuario</b></Form.Label>
           <Form.Control
+            style={{backgroundColor:"lightgrey"}}
             type="username"
             placeholder="Username"
             onChange={handleUserChange}
@@ -56,8 +59,9 @@ function Login() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label style={{textAlign:"left"}}><b>Password</b></Form.Label>
           <Form.Control
+            style={{backgroundColor:"lightgrey"}}
             type="password"
             placeholder="Password"
             onChange={handlePasswordChange}
@@ -73,13 +77,13 @@ function Login() {
         )}
         <Row>
         <Col>
-          <Button variant="primary" type="submit" onClick={clickSubmit}>
-            Ingresar
+          <Button style={{backgroundColor:"blue"}} variant="primary" type="submit" onClick={clickSubmit}>
+            <b>Ingresar</b>
           </Button>
         </Col>
         <Col>
-          <Button variant="secondary" type="cancel">
-            Cancelar
+          <Button style={{backgroundColor:"red"}} variant="secondary" type="cancel">
+            <b>Cancelar</b>
           </Button>
         </Col>
         </Row>
@@ -88,6 +92,8 @@ function Login() {
       </Form>
       </Col>
     </div>
+    </Col>
+    </center>
   );
 }
 

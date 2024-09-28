@@ -24,8 +24,10 @@ function Robots(){
         if (robot === null) {
             return null;
         } return(
-                <Card style={{ width: '18rem' }} className="mb-3">
-                    <Card.Img style={{ height: '14rem' }}  variant="top" src={robot.imagen} alt={robot.imagen} />
+                <Card style={{ width: '18rem', backgroundColor:"lightgrey", padding:"1rem" }} className="mb-3">
+                    <center>
+                    <Card.Img style={{ height: '10rem', width:"10rem" }}  variant="top" src={robot.imagen+"?raw=true"} alt={robot.imagen} />
+                    </center>
                     <Card.Body>
                         <Card.Title>{robot.nombre}</Card.Title>
                         <Card.Text>
@@ -43,12 +45,13 @@ function Robots(){
     }    
 
     return(
+        <center>
         <Container>
         <Row>
         <Col>
-            <Table>
-                <thead>
-                    <th>id</th>
+            <Table className="table table-striped">
+                <thead class="table-dark">
+                    <th>ID</th>
                     <th><FormattedMessage id="Name"/></th>
                     <th><FormattedMessage id="Model"/></th>
                     <th><FormattedMessage id="Fabricator"/></th>
@@ -57,7 +60,7 @@ function Robots(){
                     
                     {robots.map(robot => 
                         <tr onClick={() => fetchDetails(robot.id)}>
-                            <td>{robot.id}</td>
+                            <td><b>{robot.id}</b></td>
                             <td>{robot.nombre}</td>
                             <td>{robot.modelo}</td>
                             <td>{robot.empresaFabricante}</td>
@@ -73,6 +76,7 @@ function Robots(){
         </Col>
         </Row>
         </Container>
+        </center>
     )
 
 }

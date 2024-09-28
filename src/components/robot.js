@@ -18,7 +18,7 @@ function Robot(props){
     console.log(robot)
 
    return(
-       <Card style={{ width: '18rem' }} className="mb-3">
+       <Card style={{ width: '18rem', bg:'lightgray'}} className="mb-3">
            <Card.Img style={{ height: '14rem' }}  variant="top" src={robot.imagen} />
            <Card.Body>
                <Card.Title>{robot.nombre}</Card.Title>
