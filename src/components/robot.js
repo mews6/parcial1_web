@@ -17,23 +17,25 @@ function Robot(props){
     const robot = {...robots[params.robotId-1]}
     console.log(robot)
 
-   return(
-       <Card style={{ width: '18rem', bg:'lightgray'}} className="mb-3">
-           <Card.Img style={{ height: '14rem' }}  variant="top" src={robot.imagen} />
-           <Card.Body>
-               <Card.Title>{robot.nombre}</Card.Title>
-               <Card.Text>
-                   <b>→ Año de Fabricacion:</b> {robot.añoFabricacion}
-               </Card.Text>
-               <Card.Text>
-                   <b>→ Capacidad de Procesamiento:</b> {robot.capacidadProcesamiento}
-               </Card.Text>
-               <Card.Text>
-                    <b>→ Humor:</b> {robot.humor}
-               </Card.Text>
-           </Card.Body>
-       </Card>
-   );
+    return(
+        <Card style={{ width: '18rem', backgroundColor:"lightgrey", padding:"1rem" }} className="mb-3">
+            <center>
+            <Card.Img style={{ height: '10rem', width:"10rem" }}  variant="top" src={robot.imagen+"?raw=true"} alt={robot.imagen} />
+            </center>
+            <Card.Body>
+                <Card.Title>{robot.nombre}</Card.Title>
+                <Card.Text>
+                    <b>→ Año de Fabricacion:</b> {robot.añoFabricacion}
+                </Card.Text>
+                <Card.Text>
+                    <b>→ Capacidad de Procesamiento:</b> {robot.capacidadProcesamiento}
+                </Card.Text>
+                <Card.Text>
+                     <b>→ Humor:</b> {robot.humor}
+                </Card.Text>
+            </Card.Body>
+        </Card>
+    );
 }
 
 export default Robot;

@@ -49,12 +49,14 @@ function Robots(){
         <Container>
         <Row>
         <Col>
-            <Table className="table table-striped">
+            <Table class="table table-striped">
                 <thead class="table-dark">
-                    <th>ID</th>
-                    <th><FormattedMessage id="Name"/></th>
-                    <th><FormattedMessage id="Model"/></th>
-                    <th><FormattedMessage id="Fabricator"/></th>
+                    <tr>
+                        <th>ID</th>
+                        <th><FormattedMessage id="Name"/></th>
+                        <th><FormattedMessage id="Model"/></th>
+                        <th><FormattedMessage id="Fabricator"/></th>
+                    </tr>
                 </thead>
                 <tbody>
                     
