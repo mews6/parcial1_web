@@ -12,10 +12,12 @@ function Login() {
   const clickSubmit = (e) => {
     e.preventDefault(); 
     
-    const post = fetch('http://localhost:3001/login',{
+    fetch('http://localhost:3001/login',{
       method: 'POST',
-      mode:'cors',
-      body: ({ 
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify({ 
         login: formValues.login, 
         password: formValues.password 
       })
@@ -26,8 +28,6 @@ function Login() {
           return <Navigate to='/robots' replace />
         }
     });
-
-    console.log(post);
 
     setSubmitClicked(true); 
   };
