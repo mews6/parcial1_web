@@ -24,7 +24,7 @@ function Robots(){
         if (robot === null) {
             return null;
         } return(
-                <Card style={{ width: '18rem', backgroundColor:"lightgrey", padding:"1rem" }} className="mb-3">
+                <Card style={{ width: '25rem', height:"25rem" ,backgroundColor:"lightgrey", padding:"1rem" }} className="mb-3" class="card-block">
                     <center>
                     <Card.Img style={{ height: '10rem', width:"10rem" }}  variant="top" src={robot.imagen+"?raw=true"} alt={robot.imagen} />
                     </center>
@@ -49,7 +49,7 @@ function Robots(){
         <Container>
         <Row>
         <Col>
-            <Table class="table table-striped">
+            <Table class="table table-striped" style={{width:"50rem",height:"25rem"}}>
                 <thead class="table-dark">
                     <tr>
                         <th>ID</th>

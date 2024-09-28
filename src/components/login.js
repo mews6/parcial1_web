@@ -43,7 +43,7 @@ function Login() {
     <center>
     <Col style={{width: "21rem"}}>
     <div>
-      <h1>Inicio de Sesion</h1>
+      <h1>Inicio de sesión</h1>
       <Col>
       <Form onSubmit={clickSubmit}>
         <Form.Group className="mb-6" controlId="formBasicUsername">
