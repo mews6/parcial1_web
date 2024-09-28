@@ -1,4 +1,6 @@
+import { Navigate } from 'react-router-dom';
 import { useState } from 'react';
+import { Row, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -10,14 +12,20 @@ function Login() {
   const clickSubmit = (e) => {
     e.preventDefault(); 
     
-    const post = fetch('http://localhost:3001/login', {
+    const post = fetch('http://localhost:3001/login',{
       method: 'POST',
+      mode:'cors',
       body: ({ 
         login: formValues.login, 
         password: formValues.password 
       })
+      }).then((response) => {
+        if(!response.ok) {
+          setFormValid(false);
+        } else {
+          return <Navigate to='/robots' replace />
+        }
     });
-
 
     console.log(post);
 
@@ -35,7 +43,7 @@ function Login() {
   return (
     <div>
       <h1>Inicio de Sesion</h1>
-
+      <Col>
       <Form onSubmit={clickSubmit}>
         <Form.Group className="mb-6" controlId="formBasicUsername">
           <Form.Label>Usuario</Form.Label>
@@ -59,20 +67,27 @@ function Login() {
           { }
         </Form.Group>
 
-        <Button variant="primary" type="submit" onClick={clickSubmit}>
-          Submit
-        </Button>
-        
-        <Button variant="secondary" type="cancel">
-          Cancelar
-        </Button>
-
         { !formValid && (
             <Form.Text className="text-danger">
                   Error de autenticación, revise sus credenciales.
             </Form.Text>
         )}
+        <Row>
+        <Col>
+          <Button variant="primary" type="submit" onClick={clickSubmit}>
+            Ingresar
+          </Button>
+        </Col>
+        <Col>
+          <Button variant="secondary" type="cancel">
+            Cancelar
+          </Button>
+        </Col>
+        </Row>
+        
+        
       </Form>
+      </Col>
     </div>
   );
 }

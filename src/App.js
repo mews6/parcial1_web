@@ -4,6 +4,7 @@ import './App.css';
 import Login from './components/login';
 import Robots from './components/robots';
 import Robot from './components/robot';
+import HeaderImg from './header/header-img.png';
 
 const { useEffect, useState } = require("react");
 
@@ -11,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <h1>Adopta un Robot con Robot Lovers!</h1>
-      <img src='./header/header-img.png'/>
+      <img src={HeaderImg}/>
       <BrowserRouter>
        <Routes> 
          <Route path="/login" element ={<Login />} /> 
