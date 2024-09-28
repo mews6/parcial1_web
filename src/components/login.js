@@ -1,5 +1,5 @@
-import { Navigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 function Login() {
   const [formValues, setFormValues] = useState({ login: "", password: "", favClass: "1" });
   const [formValid, setFormValid] = useState(true);
-  const [submitClicked, setSubmitClicked] = useState(false);
+  const navigate = useNavigate();
 
   const clickSubmit = (e) => {
     e.preventDefault(); 
@@ -22,14 +22,13 @@ function Login() {
         password: formValues.password 
       })
       }).then((response) => {
+        console.log(response);
         if(!response.ok) {
           setFormValid(false);
         } else {
-          return <Navigate to='/robots' replace />
+          navigate('/robots')
         }
     });
-
-    setSubmitClicked(true); 
   };
 
   const handleUserChange = (e) => {

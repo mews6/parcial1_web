@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Col, Container, Row, Table } from 'react-bootstrap';
-import {FormattedMessage,IntlProvider} from 'react-intl';
-import { BrowserRouter, Router, Route } from 'react-router-dom';
-import Robot from './robot';
+import {FormattedMessage} from 'react-intl';
 import Card from 'react-bootstrap/Card';
 
 function Robots(){
