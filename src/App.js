@@ -8,7 +8,7 @@ import HeaderImg from './header/header-img.png';
 function App() {
   return (
     <div className="App">
-      <h1>Adopta un Robot con Robot Lovers!</h1>
+      <h1><b>Adopta un Robot con Robot Lovers!</b></h1>
       <img src={HeaderImg} alt='header' />
       <BrowserRouter>
        <Routes> 

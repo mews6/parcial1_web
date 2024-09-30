@@ -1,5 +1,6 @@
 import Card from 'react-bootstrap/Card';
 import { useParams } from "react-router-dom";
+import {FormattedMessage} from 'react-intl';
 const { useEffect, useState } = require("react");
 
 function Robot(props){
@@ -25,13 +26,14 @@ function Robot(props){
             <Card.Body>
                 <Card.Title>{robot.nombre}</Card.Title>
                 <Card.Text>
-                    <b>→ Año de Fabricacion:</b> {robot.añoFabricacion}
+                    <></>
+                    <b>→ <FormattedMessage id="FDate"/></b> {robot.añoFabricacion}
                 </Card.Text>
                 <Card.Text>
-                    <b>→ Capacidad de Procesamiento:</b> {robot.capacidadProcesamiento}
+                    <b>→ <FormattedMessage id="Processing"/></b> {robot.capacidadProcesamiento}
                 </Card.Text>
                 <Card.Text>
-                     <b>→ Humor:</b> {robot.humor}
+                     <b>→ <FormattedMessage id="Humor"/></b> {robot.humor}
                 </Card.Text>
             </Card.Body>
         </Card>

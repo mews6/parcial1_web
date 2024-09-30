@@ -10,7 +10,7 @@ import {FormattedMessage,IntlProvider} from 'react-intl';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  <IntlProvider locale="es-ES" messages= {localeEsMessages}>
+  <IntlProvider locale="es-ES" messages= {localeEnMessages}>
     <App />
   </IntlProvider>
 
